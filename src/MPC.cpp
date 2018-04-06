@@ -72,7 +72,7 @@ class FG_eval {
         fg[0] += 5*CppAD::pow(vars[a_start + i], 2);
     }
 
-    // Also include rage of change of steering and acceleration
+    // Also include range of change of steering and acceleration
     for (unsigned int i = 0; i < N-2; i++) 
     {
         fg[0] += 200*CppAD::pow(vars[delta_start + i + 1] - vars[delta_start + i], 2);

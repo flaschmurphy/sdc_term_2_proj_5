@@ -42,8 +42,7 @@ double polyeval(Eigen::VectorXd coeffs, double x) {
   return result;
 }
 
-// Fit a polynomial.
-// Adapted from
+// Fit a polynomial. Adapted from
 // https://github.com/JuliaMath/Polynomials.jl/blob/master/src/Polynomials.jl#L676-L716
 Eigen::VectorXd polyfit(Eigen::VectorXd xvals, Eigen::VectorXd yvals, int order) {
 
@@ -153,17 +152,6 @@ int main() {
           json msgJson;
           msgJson["steering_angle"] = vars[0] / (deg2rad(25) * Lf);
           msgJson["throttle"] = vars[1];
-
-          std::cout 
-            << vars[0] << " | "
-            << vars[1] << " | " 
-            << vars[2] << " | " 
-            << vars[3] << " | " 
-            << vars[4] << " | " 
-            << vars[5] << " | " 
-            << vars[6] << " | " 
-            << vars[7]
-            << std::endl;
 
           // Add yellow line which is the line that we would like to follow
           vector<double> next_x_vals;
